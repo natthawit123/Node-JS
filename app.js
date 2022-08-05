@@ -18,7 +18,7 @@ productsRouter.route("/").get((req, res) => {
   res.send("Hello World !! I'm Products");
 });
 
-productsRouter.route("/").get((req, res) => {
+productsRouter.route("/1").get((req, res) => {
     res.send("Hello World !! I'm Products 1");
   });
 

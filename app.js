@@ -5,16 +5,19 @@ const morgan = require('morgan');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const POST = process.env.POST || 4000;
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname,"/public/")))
 
+app.set("views","./src/views");
+app.set("view engine", "ejs")
+
 app.get("/", (req,res) =>{
 
-    res.send('Hello Word 1');
+    res.render('index',{username: '007xx', customers: ["mayu","maki","makai"]});
 })
 
-app.listen(port, ()=>{
-    debug("Listening on port " + chalk.blue(port));
+app.listen(POST, ()=>{
+    debug("Listening on port " + chalk.blue(POST));
 })

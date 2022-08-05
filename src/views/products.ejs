@@ -1406,7 +1406,11 @@
 
     <section class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px]">
       <div class="container">
-        <h1>Hello World</h1>
+        <h1>Hello World</h1>/
+        <% products.map((product)=>{ %>
+          <h4><%=product.productsTitle %></h4>
+          <p><%=product.productsDescription %></p>
+        <%})%>
       </div>
     </section>
 

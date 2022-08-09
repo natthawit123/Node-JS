@@ -3,6 +3,7 @@ const chalk = require("chalk");
 const debug = require("debug")("app");
 const morgan = require("morgan");
 const path = require("path");
+const products = require("./data/products.json");
 const productsRouter = express.Router();
 
 const app = express();
@@ -15,14 +16,9 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 productsRouter.route("/").get((req, res) => {
-  res.render("products", {
-    products: [
-        {productsTitle: 'น้ำยาโจ่', productsDescription: "น้ำยาล้าง...", productsPrice: 45},
-        {productsTitle: 'น้ำยาโจ่ 1', productsDescription: "น้ำยาล้าง...1", productsPrice: 50},
-        {productsTitle: 'น้ำยาโจ่ 2', productsDescription: "น้ำยาล้าง...2", productsPrice: 55},
-        {productsTitle: 'น้ำยาโจ่ 3', productsDescription: "น้ำยาล้าง...3", productsPrice: 60},
-    ]
-  });
+  res.render("products", 
+    products,
+  );
 });
 
 productsRouter.route("/1").get((req, res) => {

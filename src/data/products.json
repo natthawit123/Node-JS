@@ -1,5 +1,4 @@
-{
-    "products": [
+[
       {
         "id": 0,
         "productsTitle": "น้ำยาโจ่",
@@ -31,4 +30,3 @@
         "productsPrice": 65
       }
     ]
-  }
